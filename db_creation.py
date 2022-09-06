@@ -1,6 +1,7 @@
 import psycopg2
+from getpass import getpass
 
-user_password = input('Enter password: ')
+user_password = getpass("Enter password: ")
 
 with psycopg2.connect(
         host="localhost",
