@@ -1,7 +1,7 @@
 import psycopg2
 from getpass import getpass
 
-user_password = getpass("Enter password: ")
+user_password = getpass(prompt="Enter password: ")
 
 with psycopg2.connect(
         host="localhost",
@@ -32,6 +32,7 @@ with psycopg2.connect(
         CREATE TABLE IF NOT EXISTS stats(
             player_id INT NOT NULL,
             t_id INT NOT NULL,
+            PRIMARY KEY (player_id, t_id),
             FOREIGN KEY (player_id)
                 REFERENCES players (player_id),
             FOREIGN KEY (t_id)
