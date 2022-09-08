@@ -40,6 +40,11 @@ with psycopg2.connect(
             goals INT NOT NULL,
             assists INT NOT NULL,
             penalty_time INT NOT NULL
-        );  
-    """)
+        );
+        CREATE TABLE IF NOT EXISTS user(
+            user_id SERIAL PRIMARY KEY,
+            user_points INT NOT NULL DEFAULT 0,
+            user_dust INT NOT NULL DEFAULT 0
+        );
+    """)        # TODO: how to implement deck_id? Hash?
 
