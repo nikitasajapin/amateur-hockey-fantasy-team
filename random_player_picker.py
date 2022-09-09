@@ -8,7 +8,7 @@ with psycopg2.connect(
         host="localhost",
         database="postgres",
         user="postgres",
-        password='user_password') as conn:
+        password=user_password) as conn:
     cur = conn.cursor()     # TODO: retrieve player link, not name
     cur.execute("""
         SELECT name
